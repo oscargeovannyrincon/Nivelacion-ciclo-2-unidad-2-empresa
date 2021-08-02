@@ -1,7 +1,7 @@
 package oscargeovannyrincon.empresa;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.List;  
 
 public class Directivo extends Empleado {
 
@@ -31,8 +31,11 @@ public class Directivo extends Empleado {
         return super.mostrar() + ", categoria= " + categoria;
     }
 
-    public void addSubordinado(Empleado empleado){
-        subordinados[numSubordinados];
+    public void addSubordinado(Empleado empleado) throws Exception{
+        if(numSubordinados==10){
+            throw new Exception("no hay mas vacantes")
+        }
+        subordinados[numSubordinados]=empleado;
         empleado.setJefe(this);
         numSubordinados++;
     }
